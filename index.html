@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1#displayCount {
+    width: auto;
+    background-color: blueviolet;
+    margin: auto;
+    /* text-align: center; */
+    display: flex;
+    height: 90px;
+    justify-content: center;
+    align-items: center;
+    font-size: 51px;
+    color: aliceblue;
+}
+
+div {
+    width: 400px;
+    height: 200px;
+    background-color: antiquewhite;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin:auto;
+    margin-top:50px;
+}
+#decrese {
+    padding: 16px 27px;
+    font-size: 16px;
+    color: blue;
+    border: none;
+    background-color: black;
+}
+#increase {
+    padding: 16px 27px;
+    font-size: 16px;
+    color: blue;
+    border: none;
+    background-color: black;
+}
+    </style>
+</head>
+<body>
+    <h1 id="displayCount"></h1>
+    <div>
+        <button id="decrese">Decrese</button>
+    <button id="increase">Increase</button>
+    </div>
+    
+
+</body>
+</html>
+<script>
+// ***  if i anm using local storage the iu expect that the 
+//even after closing the page the value is stored so we use this method
+
+let count=localStorage.getItem("countvalue") || 0
+
+// ***
+
+    // catchh1 element 
+   document.querySelector("#displayCount").innerHTML;
+    // let count=0;
+    document.querySelector("#displayCount").innerHTML=count;
+    // add event listner button 1 and start thre function 
+    document.querySelector("#increase").addEventListener("click",function(event){
+        // ADD count value to local storage
+        localStorage.setItem("countvalue",count)
+        document.querySelector("#displayCount").innerHTML=count++;
+        
+    })
+    // add event listner button 2 and start thre function 
+    document.querySelector("#decrese").addEventListener("click",function(event){
+        // ADD count value to local storage
+        localStorage.setItem("countvalue",count)
+        document.querySelector("#displayCount").innerHTML=count--;
+       
+
+
+})
+
+
+</script>
